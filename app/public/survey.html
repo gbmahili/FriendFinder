@@ -7,19 +7,257 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>GBMahili | Survey</title>
+    <style>
+        .container{
+            margin-top: 50px;
+        }
+        .card-block{
+            margin: 10px;
+        }
+        .allQuestions{
+            display: none;
+        }
+        .q1{
+            display: block;
+        }
+        
+    </style>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+            <div class="col-6 mx-auto">
                 <h1>Survey</h1>
                 <hr>
+                
+                <div class="card question">
+                    <div class="card-header">
+                         (Where 1 is strongly disagree and 5 is strongly agree)
+                    </div>
+                    <div class="card-block text-center">
+                        <a href="#" class="btn btn-info prev btn-block">Previous Question</a>
+                        <br>
+                        <center>
+                        <form class="form-inline text-center">
+                            <div class="q1 allQuestions">
+                                <label class="mr-sm-2" for="q1">1. I prefer outdoor activities, rather than indoor activties.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0 btn-block" id="q1">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select> 
+                            </div>
+
+                            <div class="q2 allQuestions">
+                                <label class="mr-sm-2" for="q2">2. I prefer going out to eat at restaurants, rather than cooking at home.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q3 allQuestions">
+                                <label class="mr-sm-2" for="q2">3. I prefer texting, rather than talking on the phone.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q4 allQuestions">
+                                <label class="mr-sm-2" for="q2">4. I prefer living in a small town, rather than a big city.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div> 
+                            <div class="q5 allQuestions">
+                                <label class="mr-sm-2" for="q5">5.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q6 allQuestions">
+                                <label class="mr-sm-2" for="q6">6.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q7 allQuestions">
+                                <label class="mr-sm-2" for="q7">7.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q8 allQuestions">
+                                <label class="mr-sm-2" for="q8">8.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q9 allQuestions">
+                                <label class="mr-sm-2" for="q9">9.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                            <div class="q10 allQuestions">
+                                <label class="mr-sm-2" for="q10">10.</label>
+                                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q2">
+                                    <option selected>Select answer...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </form>
+                        </center>
+                        <br>
+                        
+                        <a href="#" class="btn btn-primary next btn-block">Next Question</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            var count = 1;
+            if (count == 1) {
+                $(".prev").hide();
+            } else {
+                $(".prev").show();
+            }
+            $(".next").click((e) =>{
+                if (count == 9) {
+                    $(".next").hide();
+                }
+                if (count > 0 && count < 11) {
+                    count++;
+                    showQuestions(count);
+                    console.log(count);
+                    $(".prev").show();
+                }
+                                                              
+            });
+
+            $(".prev").click((e) => {
+                if (count == 2) {
+                    $(".prev").hide();
+                }
+                if (count < 11) {
+                    $(".next").show();                    
+                }
+                
+               if (count > 0 && count < 11) {
+                    count--;
+                    showQuestions(count);
+                    console.log(count);
+                }
+                
+            });
+
+            function showQuestions(count){
+                switch (count) {
+                    case 1:
+                        $(".allQuestions").hide();
+                        $(".q1").show();
+                        break;
+                    case 2:
+                        $(".allQuestions").hide();
+                        $(".q2").show();
+                        break;
+                    case 3:
+                        $(".allQuestions").hide();
+                        $(".q3").show();
+                        break;
+                    case 4:
+                        $(".allQuestions").hide();
+                        $(".q4").show();
+                        break;
+                    case 5:
+                        $(".allQuestions").hide();
+                        $(".q5").show();
+                        break;
+                    case 6:
+                        $(".allQuestions").hide();
+                        $(".q6").show();
+                        break;
+                    case 7:
+                        $(".allQuestions").hide();
+                        $(".q7").show();
+                        break;
+                    case 8:
+                        $(".allQuestions").hide();
+                        $(".q8").show();
+                        break;
+                    case 9:
+                        $(".allQuestions").hide();
+                        $(".q9").show();
+                        break;
+                    case 10:
+                        $(".allQuestions").hide();
+                        $(".q10").show();
+                        break;
+                    default:
+                        break;
+                }  
+            }
+            
+
+
+           
+            $().button('toggle');
+        })
+    </script>
 
 </body>
 
