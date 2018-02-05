@@ -7,13 +7,20 @@ path = require("path");
 var app, PORT;
 app = express();
 PORT = 3000;
+
+var publicFolder = "/../public/";
 // Use bodyParser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Home route
 app.get("/", (req, res) => {
-    res.sendFile(path.join(`${__dirname}/../public/`, "home.html"));
+    res.sendFile(path.join(`${__dirname}${publicFolder}`, "home.html"));
+});
+
+// Survey Page
+app.get("/survey", (req, res) => {
+    res.sendFile(path.join(`${__dirname}${publicFolder}`, "survey.html"));
 });
 
 // Start server
