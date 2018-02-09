@@ -21,7 +21,7 @@ var findAMatch = function (firstArray, secondArray) {
 
 //var finalResultsArray = findAMatch(a, b);
 
-var findIndexesOfSmallestNumbersInFinalResults = function(finalResultsArray){
+var getIndexOfSmallestInArray = function(finalResultsArray){
 
     Array.min = function (array) {
         return Math.min.apply(Math, array);
@@ -37,20 +37,5 @@ var findIndexesOfSmallestNumbersInFinalResults = function(finalResultsArray){
     return indexesOfSmallestNumber;
         
 }
-
-//console.log(finalResultsArray);
-//console.log(findIndexesOfSmallestNumbersInFinalResults(finalResultsArray));
-
-
-
 module.exports.findAMatch = findAMatch;
-module.exports.getIndexOfSmallestInArray = findIndexesOfSmallestNumbersInFinalResults
-
-// var getIndexOfSmallestInArray = function () {
-//     Array.min = function (array) {
-//         return Math.min.apply(Math, array);
-//     }
-//     var r = findAMatch(a, b);
-//     var minimum = Array.min(findAMatch(a, b));
-//     return r.indexOf(minimum);
-// }
+module.exports.getIndexOfSmallestInArray = getIndexOfSmallestInArray;
