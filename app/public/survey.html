@@ -16,7 +16,8 @@
             margin: 10px;
         }
 
-        .allQuestions, .submit {
+        .allQuestions,
+        .submit {
             display: none;
         }
 
@@ -24,19 +25,26 @@
             display: block;
         }
 
-        .card.question, .card.about{
+        .card.question,
+        .card.about {
             margin: 12px;
             height: 300px;
             border: 1px solid #C7BAA9;
         }
-        .form-group{
+
+        .form-group {
             margin: 10px;
         }
-        .card-header>span{
+
+        .card-header>span {
             color: #aaa;
             font-size: 0.7em;
         }
-        .btn-block, .form-control, input, select{
+
+        .btn-block,
+        .form-control,
+        input,
+        select {
             border-radius: 0;
         }
     </style>
@@ -55,7 +63,7 @@
                     <div class="card-header">
                         About You
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="name" class="form-control" id="name" placeholder="Name">
@@ -72,13 +80,15 @@
 
                 <div class="card question">
                     <div class="card-header">
-                        Survey Question <span>(Where 1 is strongly disagree and 5 is strongly agree)</span>
+                        Survey Question
+                        <span>(Where 1 is strongly disagree and 5 is strongly agree)</span>
                     </div>
                     <div class="card-block text-center">
-                        <a href="#" class="btn btn-info prev btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Previous Question</a>
+                        <a href="#" class="btn btn-info prev btn-block">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i> Previous Question</a>
                         <br>
                         <center>
-                            <form class="form-inline text-center">
+                            <form class="form-inline text-center" id="surveyquestions">
                                 <div class="q1 allQuestions">
                                     <label class="mr-sm-2" for="q1">1. I prefer outdoor activities, rather than indoor activties.</label>
                                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0 btn-block" id="q1">
@@ -161,7 +171,8 @@
                                     </select>
                                 </div>
                                 <div class="q9 allQuestions">
-                                    <label class="mr-sm-2" for="q9">9.You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label>
+                                    <label class="mr-sm-2" for="q9">9.You think that everyone’s views should be respected regardless of whether they are
+                                        supported by facts or not.</label>
                                     <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="q9">
                                         <option value="1">1 (Strongly Disagree)</option>
                                         <option value="2">2</option>
@@ -183,16 +194,18 @@
                             </form>
                         </center>
                         <br>
-                        <a href="#" class="btn btn-primary next btn-block">Next Question <i class="fa fa-arrow-right" aria-hidden="true"></i></a>                       
-                        <a href="#" class="btn btn-success submit btn-block"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit Survey</a>
+                        <a href="#" class="btn btn-primary next btn-block">Next Question
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="btn btn-success submit btn-block">
+                            <i class="fa fa-check-circle" aria-hidden="true"></i> Submit Survey</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
@@ -283,10 +296,21 @@
 
             $(".submit").click((e) => {
                 e.preventDefault();
-                var arr = $('select.custom-select').map(function () {
-                    return this.value
-                }).get();
-                console.log(arr);
+                var person = {
+                    name: $("#name").val().trim(),
+                    photourl: $("#photoLink").val().trim(),
+                    questions: $('select.custom-select').map(function () {
+                        return this.value
+                    }).get()
+                };
+                console.log(person.questions);
+
+                // Send the information to the server from the clientside
+                $.post("/survey", person).done(function (data) {
+                    console.log(data);
+                    alert("Looking for a match");
+                });
+                
             });
 
             $().button('toggle');
