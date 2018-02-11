@@ -364,20 +364,37 @@
                         return this.value
                     }).get()
                 };
+
+                var pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|' + // domain name
+                    '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+                    '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+                    '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
                 
 
                 // Send the information to the server from the clientside
-                $.post("/survey", person).done(function (data) {
-                    console.log(data);
-                    var matchName = data.name;
-                    var matchPhoto = data.photourl;
-                    $(".currentUser").text(person.name);
-                    $("#userMatch").text(matchName);
-                    $("#userMatchPhoto").attr("src", matchPhoto).attr("alt", matchName);
-                    //$("#showMatchBtn").click();
-                    $("#showMatchModal").modal();
-                    //alert("Looking for a match");
-                });
+                if ($("#name").val().trim() == "") {
+                    alert("Please enter your name");
+                }else if($("#photoLink").val().trim() == ""){
+                    alert("Please enter a URL"); 
+                }else if (!pattern.test($("#photoLink").val().trim())) {
+                    alert("Please enter a valid URL.");
+                    return false;
+                } else{
+                    $.post("/survey", person).done(function (data) {
+                        console.log(data);
+                        var matchName = data.name;
+                        var matchPhoto = data.photourl;
+                        $(".currentUser").text(person.name);
+                        $("#userMatch").text(matchName);
+                        $("#userMatchPhoto").attr("src", matchPhoto).attr("alt", matchName);
+                        //$("#showMatchBtn").click();
+                        $("#showMatchModal").modal();
+                        //alert("Looking for a match");
+                    });
+                }
+                
                 
             });
 
