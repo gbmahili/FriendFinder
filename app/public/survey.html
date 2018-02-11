@@ -389,19 +389,15 @@
                         $(".currentUser").text(person.name);
                         $("#userMatch").text(matchName);
                         $("#userMatchPhoto").attr("src", matchPhoto).attr("alt", matchName);
-                        //$("#showMatchBtn").click();
                         $("#showMatchModal").modal();
-                        //alert("Looking for a match");
                     });
-                }
-                
-                
+                }                
             });
 
             $().button('toggle');
             
             $('#showMatchModal').on('shown.bs.modal', function () {
-                $('#myInput').focus()
+                $('#myInput').focus();
             });
         })
     </script>
